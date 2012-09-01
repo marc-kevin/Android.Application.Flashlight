@@ -7,15 +7,13 @@ import android.content.Intent;
 public class ScreenBroadcastReceiver extends BroadcastReceiver {
 
 	private FlashlightActivity flashlightActivity;
-	
-	public ScreenBroadcastReceiver(FlashlightActivity flashlightActivity)
-	{
-		
+
+	public ScreenBroadcastReceiver(FlashlightActivity flashlightActivity) {
 		this.flashlightActivity = flashlightActivity;
 	}
-	
-    @Override
-    public void onReceive(Context context, Intent intent) {
-    	flashlightActivity.finish();
-    }
+
+	@Override
+	public void onReceive(Context context, Intent intent) {
+		flashlightActivity.finish();
+	}
 }

@@ -18,10 +18,10 @@ public class FlashlightActivity extends Activity {
  * Class Variables START
  ******************************************************************************************************************************************/
 
-    private boolean previousBrightnessModeisAutomatic;
-    private float previousBrightness;
-    private boolean deviceHasFlash;
-    private Camera camera;
+    private boolean                 previousBrightnessModeisAutomatic;
+    private float                   previousBrightness;
+    private boolean                 deviceHasFlash;
+    private Camera                  camera;
     private ScreenBroadcastReceiver screenBroadcastReciever;
 
 /******************************************************************************************************************************************
@@ -116,6 +116,8 @@ public class FlashlightActivity extends Activity {
             layoutParams.screenBrightness = previousBrightness;
             getWindow().setAttributes(layoutParams);
         }
+        
+        this.finish();
 
     }
 
