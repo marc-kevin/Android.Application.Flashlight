@@ -35,8 +35,8 @@ public class FlashlightActivity extends Activity {
         setContentView(R.layout.main);
 
         screenBroadcastReciever = new ScreenBroadcastReceiver(this);
-        registerReceiver(screenBroadcastReciever, new IntentFilter(Intent.ACTION_SCREEN_OFF));
-        
+    	registerReceiver(screenBroadcastReciever, new IntentFilter(Intent.ACTION_SCREEN_OFF));
+
         deviceHasFlash = getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
 
     }
@@ -88,6 +88,8 @@ public class FlashlightActivity extends Activity {
         }
     }
 
+    
+    
     @Override
     public void onStop() {
         super.onStop();
@@ -116,7 +118,8 @@ public class FlashlightActivity extends Activity {
             layoutParams.screenBrightness = previousBrightness;
             getWindow().setAttributes(layoutParams);
         }
-        
+        unregisterReceiver(screenBroadcastReciever);
+
         this.finish();
 
     }
@@ -134,6 +137,7 @@ public class FlashlightActivity extends Activity {
     public void onPause() {
         super.onPause();
         Log.d("tag", "INSIDE_ON_PAUSE");
+        
     }
 
     
